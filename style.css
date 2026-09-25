@@ -1,0 +1,1457 @@
+/* =========================================================
+   SCAMSHIELD - COMPLETE STYLE.CSS
+   Public Home + Logged-in Dashboard
+   ========================================================= */
+
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07111f;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   PUBLIC NAVBAR
+   ========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(7, 17, 31, 0.92);
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.logo i {
+    color: #28d7ff;
+    font-size: 28px;
+}
+
+.logo span span {
+    color: #28d7ff;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar nav a {
+    color: #aebdce;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #ffffff;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.login-btn {
+    color: #d6e2ee;
+    padding: 10px 18px;
+}
+
+.signup-btn {
+    background: #16bde7;
+    color: #03101c;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.signup-btn:hover {
+    background: #54ddff;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PUBLIC HERO
+   ========================================================= */
+
+.hero {
+    min-height: 680px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding: 80px 8%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(0, 191, 255, 0.15),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(0, 100, 255, 0.10),
+            transparent 30%
+        );
+}
+
+.hero-content {
+    max-width: 620px;
+    position: relative;
+    z-index: 2;
+}
+
+.small-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(40,215,255,0.25);
+
+    border-radius: 30px;
+
+    color: #65dcff;
+
+    background: rgba(40,215,255,0.06);
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 0 20px rgba(40,215,255,0.05);
+}
+
+.small-badge i {
+    font-size: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 5vw, 72px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #28d7ff;
+}
+
+.hero-content > p {
+    color: #9cafc3;
+
+    font-size: 17px;
+
+    max-width: 550px;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #18bfe9;
+
+    color: #03101c;
+
+    padding: 14px 23px;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    background: #63e3ff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(24,191,233,0.25);
+}
+
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 22px;
+
+    border: 1px solid rgba(255,255,255,0.13);
+
+    border-radius: 8px;
+
+    color: #d5e0ea;
+
+    transition: 0.3s;
+}
+
+.secondary-btn:hover {
+    border-color: #28d7ff;
+    color: #28d7ff;
+}
+
+.trust-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #71869b;
+
+    font-size: 13px;
+}
+
+.trust-text i {
+    color: #29d59b;
+    margin-left: 10px;
+}
+
+
+/* =========================================================
+   HERO SCANNER CARD
+   ========================================================= */
+
+.hero-card-container {
+    width: 480px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.glow {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: #00cfff;
+
+    filter: blur(130px);
+
+    opacity: 0.14;
+
+    top: 50px;
+    left: 80px;
+}
+
+.scanner-card {
+    position: relative;
+
+    padding: 25px;
+
+    background: rgba(14, 29, 48, 0.95);
+
+    border: 1px solid rgba(88, 185, 255, 0.15);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.45),
+        0 0 50px rgba(40,215,255,0.06),
+        inset 0 1px rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(15px);
+
+    animation: scannerFloat 4s ease-in-out infinite;
+}
+
+@keyframes scannerFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.scanner-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.scanner-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.shield-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(40,215,255,0.1);
+
+    color: #28d7ff;
+}
+
+.scanner-title h3 {
+    font-size: 15px;
+}
+
+.scanner-title p {
+    color: #70869b;
+    font-size: 11px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #2ee5a1;
+
+    box-shadow: 0 0 15px #2ee5a1;
+}
+
+
+/* =========================================================
+   MESSAGE BOX
+   ========================================================= */
+
+.message-box {
+    padding: 18px;
+
+    background: #091725;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    border-radius: 12px;
+
+    margin-bottom: 18px;
+}
+
+.message-label {
+    color: #8297aa;
+
+    font-size: 11px;
+
+    margin-bottom: 10px;
+}
+
+.message-label i {
+    margin-right: 5px;
+}
+
+.message-box p {
+    color: #d4e0eb;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ANALYZING
+   ========================================================= */
+
+.analyzing {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background: rgba(40,215,255,0.04);
+
+    border: 1px solid rgba(40,215,255,0.08);
+
+    margin-bottom: 18px;
+}
+
+.loading-circle {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #28d7ff;
+
+    background: rgba(40,215,255,0.1);
+}
+
+.analyzing span {
+    display: block;
+
+    color: #d6e5f0;
+
+    font-size: 12px;
+}
+
+.analyzing small {
+    color: #637b91;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   RISK RESULT
+   ========================================================= */
+
+.risk-result {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 16px;
+
+    border-radius: 11px;
+
+    background: rgba(255,65,65,0.07);
+
+    border: 1px solid rgba(255,65,65,0.13);
+
+    box-shadow:
+        0 0 25px rgba(255,65,65,0.05);
+}
+
+.risk-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    color: #ff6565;
+
+    background: rgba(255,65,65,0.1);
+}
+
+.risk-info {
+    flex: 1;
+}
+
+.risk-info span {
+    display: block;
+
+    color: #73899d;
+
+    font-size: 10px;
+}
+
+.risk-info strong {
+    color: #ff6565;
+
+    font-size: 13px;
+}
+
+.risk-score {
+    color: #ff6565;
+
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PUBLIC STATS
+   ========================================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    background: rgba(255,255,255,0.06);
+
+    border-top: 1px solid rgba(255,255,255,0.05);
+
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.stat {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 28px 8%;
+
+    background: #091524;
+}
+
+.stat > i {
+    font-size: 23px;
+
+    color: #28d7ff;
+}
+
+.stat h3 {
+    font-size: 14px;
+}
+
+.stat p {
+    color: #6e8397;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   PUBLIC SECTIONS
+   ========================================================= */
+
+.features-section,
+.scams-section {
+    padding: 100px 8%;
+}
+
+.section-heading {
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.section-heading > span {
+    color: #28d7ff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    margin: 12px 0 15px;
+}
+
+.section-heading h2 span {
+    color: #28d7ff;
+}
+
+.section-heading p {
+    color: #8195a9;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.features-section {
+    background: #081321;
+}
+
+.features-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.feature-card {
+    padding: 28px;
+
+    border-radius: 14px;
+
+    background: #0d1b2c;
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(40,215,255,0.25);
+}
+
+.feature-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    margin-bottom: 20px;
+}
+
+.feature-icon.blue {
+    color: #38d7ff;
+    background: rgba(56,215,255,0.1);
+}
+
+.feature-icon.red {
+    color: #ff6565;
+    background: rgba(255,101,101,0.1);
+}
+
+.feature-icon.green {
+    color: #35dba4;
+    background: rgba(53,219,164,0.1);
+}
+
+.feature-icon.purple {
+    color: #b58cff;
+    background: rgba(181,140,255,0.1);
+}
+
+.feature-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 9px;
+}
+
+.feature-card p {
+    color: #71869a;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SCAMS
+   ========================================================= */
+
+.scams-section {
+    background: #07111f;
+}
+
+.scam-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.scam-card {
+    padding: 30px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    border-radius: 14px;
+
+    background: #0a1726;
+
+    transition: 0.3s;
+}
+
+.scam-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(40,215,255,0.25);
+}
+
+.scam-card-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: #28d7ff;
+
+    background: rgba(40,215,255,0.08);
+
+    margin-bottom: 20px;
+}
+
+.scam-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+.scam-card p {
+    color: #71869a;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-section {
+    padding: 90px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b1c2d,
+            #07111f
+        );
+}
+
+.about-content {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 130px 1fr;
+
+    gap: 35px;
+
+    align-items: start;
+}
+
+.about-icon {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 25px;
+
+    color: #28d7ff;
+
+    background: rgba(40,215,255,0.08);
+
+    font-size: 40px;
+}
+
+.about-content h2 {
+    font-size: 36px;
+
+    line-height: 1.2;
+
+    margin: 12px 0 18px;
+}
+
+.about-content p {
+    color: #7f94a8;
+
+    font-size: 14px;
+
+    max-width: 700px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   PUBLIC FOOTER
+   ========================================================= */
+
+footer {
+    padding: 45px 8%;
+
+    text-align: center;
+
+    background: #050d17;
+
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-logo {
+    font-size: 20px;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
+}
+
+.footer-logo i {
+    color: #28d7ff;
+
+    margin-right: 7px;
+}
+
+footer > p {
+    color: #657b90;
+
+    font-size: 12px;
+
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #7f94a8;
+
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    color: #28d7ff;
+}
+
+.copyright {
+    color: #43586c;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   HERO DECORATION
+   ========================================================= */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(40,215,255,0.08);
+
+    right: 2%;
+    top: 10%;
+
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(40,215,255,0.05);
+
+    right: 12%;
+    top: 25%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LOGIN / SIGNUP COMMON
+   ========================================================= */
+
+.login-page,
+.signup-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(40,215,255,0.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(0,100,255,0.08),
+            transparent 35%
+        ),
+        #07111f;
+}
+
+
+/* =========================================================
+   WELCOME MESSAGE
+   ========================================================= */
+
+.welcome-message {
+    position: fixed;
+
+    top: 100px;
+    right: 30px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 310px;
+
+    padding: 16px 20px;
+
+    background: #0d2b22;
+
+    border: 1px solid rgba(53,208,127,0.35);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35);
+
+    z-index: 9999;
+
+    animation: welcomeSlide 0.5s ease;
+}
+
+.welcome-check {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #35d07f;
+
+    color: #07111f;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+.welcome-message strong {
+    display: block;
+
+    color: #35d07f;
+
+    font-size: 14px;
+}
+
+.welcome-message p {
+    margin-top: 3px;
+
+    color: #a9c4b7;
+
+    font-size: 11px;
+}
+
+@keyframes welcomeSlide {
+
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================================
+   FUTURISTIC SHIELD IMAGE
+   =========================================================
+   
+   IMPORTANT:
+   Your index.html currently has:
+
+   <div class="shield">
+       <i class="fa-solid fa-shield-halved"></i>
+   </div>
+
+   So we replace that icon with:
+   images/cybersecurity-shield.png
+
+   No HTML change required.
+   ========================================================= */
+
+.dashboard-shield .shield {
+    width: 220px !important;
+    height: 180px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    position: relative !important;
+
+    z-index: 3 !important;
+
+    background: transparent !important;
+
+    clip-path: none !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+
+    color: transparent !important;
+}
+
+.dashboard-shield .shield::after {
+    display: none !important;
+}
+
+.dashboard-shield .shield i {
+    display: none !important;
+}
+
+.dashboard-shield .shield::before {
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    background-image:
+        url("images/cybersecurity-shield.png");
+
+    background-size: contain;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    filter:
+        drop-shadow(
+            0 0 18px rgba(40,215,255,0.28)
+        )
+        drop-shadow(
+            0 0 35px rgba(40,215,255,0.12)
+        );
+}
+
+
+/* =========================================================
+   DASHBOARD SHIELD RINGS
+   ========================================================= */
+
+.dashboard-shield .ring {
+    pointer-events: none;
+}
+
+.dashboard-shield .r1 {
+    width: 185px;
+    height: 185px;
+}
+
+.dashboard-shield .r2 {
+    width: 235px;
+    height: 235px;
+}
+
+.dashboard-shield .r3 {
+    width: 285px;
+    height: 285px;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   EXTRA DASHBOARD POLISH
+   ========================================================= */
+
+#loggedHome {
+    overflow-x: hidden;
+}
+
+#loggedHome .welcome-panel {
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.18),
+        inset 0 1px rgba(255,255,255,0.035),
+        0 0 35px rgba(0,180,255,0.04);
+}
+
+#loggedHome .panel {
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#loggedHome .panel:hover {
+    border-color: rgba(40,180,255,0.38);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.18),
+        inset 0 1px rgba(255,255,255,0.03);
+}
+
+#loggedHome .stat-box {
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+#loggedHome .stat-box:hover {
+    transform: translateY(-4px);
+}
+
+#loggedHome .activity-row {
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+#loggedHome .activity-row:hover {
+    background: rgba(8,48,88,0.75);
+
+    border-color: rgba(40,180,255,0.35);
+}
+
+#loggedHome .dashboard-shield {
+    filter:
+        drop-shadow(
+            0 0 20px rgba(0,180,255,0.06)
+        );
+}
+
+
+/* =========================================================
+   RESPONSIVE - PUBLIC HOME
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 60px;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero-buttons,
+    .trust-text {
+        justify-content: center;
+    }
+
+    .hero-card-container {
+        width: min(480px, 100%);
+    }
+
+    .features-grid,
+    .scam-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - PUBLIC MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-buttons .login-btn {
+        display: none;
+    }
+
+    .signup-btn {
+        padding: 9px 13px;
+
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 55px 5%;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-content > p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .trust-text {
+        flex-wrap: wrap;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .features-section,
+    .scams-section,
+    .about-section {
+        padding: 70px 5%;
+    }
+
+    .features-grid,
+    .scam-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2,
+    .about-content h2 {
+        font-size: 29px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-icon {
+        margin: auto;
+    }
+}
+
+
+/* =========================================================
+   SHIELD IMAGE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+    .dashboard-shield .shield {
+        width: 190px !important;
+        height: 160px !important;
+    }
+
+    .dashboard-shield .r1 {
+        width: 165px;
+        height: 165px;
+    }
+
+    .dashboard-shield .r2 {
+        width: 215px;
+        height: 215px;
+    }
+
+    .dashboard-shield .r3 {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .dashboard-shield .shield {
+        width: 200px !important;
+        height: 165px !important;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .dashboard-shield {
+        height: 220px;
+    }
+
+    .dashboard-shield .shield {
+        width: 190px !important;
+        height: 155px !important;
+    }
+
+    .dashboard-shield .r1 {
+        width: 150px;
+        height: 150px;
+    }
+
+    .dashboard-shield .r2 {
+        width: 195px;
+        height: 195px;
+    }
+
+    .dashboard-shield .r3 {
+        width: 235px;
+        height: 235px;
+    }
+}
+
+
+/* =========================================================
+   FINAL SAFETY OVERRIDES
+   ========================================================= */
+
+/* Prevent old public styles from affecting dashboard */
+
+#loggedHome a {
+    text-decoration: none;
+}
+
+#loggedHome button {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#loggedHome img {
+    max-width: 100%;
+}
+
+
+/* Keep dashboard image centered */
+
+#loggedHome .dashboard-shield .shield::before {
+    margin: auto;
+}
+
+
+/* Keep public page normal */
+
+#publicHome {
+    width: 100%;
+}
+
+
+/* =========================================================
+   END OF STYLE.CSS
+   ========================================================= */

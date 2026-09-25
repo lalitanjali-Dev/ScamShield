@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ScamShield - Scam Analyzer</title>
+
+    <link rel="stylesheet" href="analyzer.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="shield">🛡️</span>
+            Scam<span>Shield</span>
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="analyzer.html" class="active">Analyzer</a>
+            <a href="../scams/scams.html">Scam Types</a>
+            <a href="../index.html#about">About</a>
+        </nav>
+
+        <a href="../auth/login.html" class="login-btn">
+            Login
+        </a>
+
+    </header>
+
+
+    <!-- MAIN ANALYZER -->
+    <main class="analyzer-container">
+
+        <!-- HEADING -->
+        <section class="heading">
+
+            <span class="small-title">
+                SCAM ANALYZER
+            </span>
+
+            <h1>
+                Check Before
+                <strong>You Trust</strong>
+            </h1>
+
+            <p>
+                Paste a suspicious SMS, email or online message below.
+                ScamShield will analyze the message and identify
+                possible scam indicators.
+            </p>
+
+        </section>
+
+
+        <!-- ANALYZER CARD -->
+        <section class="analyzer-card">
+
+            <div class="input-header">
+
+                <label for="message">
+                    Suspicious Message
+                </label>
+
+                <span id="characterCount">
+                    0 characters
+                </span>
+
+            </div>
+
+
+            <textarea
+                id="message"
+                placeholder="Example: Congratulations! You have won ₹50,000. Click this link to claim your prize now..."
+            ></textarea>
+
+
+            <!-- BUTTONS -->
+            <div class="button-row">
+
+                <button id="analyzeBtn" class="analyze-btn">
+                    🔍 Analyze Message
+                </button>
+
+                <button id="clearBtn" class="clear-btn">
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- RESULT -->
+            <div id="result" class="result hidden">
+
+                <div class="result-header">
+
+                    <div>
+
+                        <span class="result-label">
+                            RISK LEVEL
+                        </span>
+
+                        <h2 id="riskLevel">
+                            HIGH RISK
+                        </h2>
+
+                    </div>
+
+
+                    <div class="score-box">
+
+                        <span id="riskScore">
+                            0
+                        </span>
+
+                        <small>%</small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROGRESS BAR -->
+                <div class="progress">
+
+                    <div id="progressBar"></div>
+
+                </div>
+
+
+                <!-- REASONS -->
+                <div class="result-section">
+
+                    <h3>
+                        ⚠️ Why is this suspicious?
+                    </h3>
+
+                    <ul id="reasons">
+                    </ul>
+
+                </div>
+
+
+                <!-- SAFETY -->
+                <div class="result-section safety">
+
+                    <h3>
+                        🛡️ Safety Recommendation
+                    </h3>
+
+                    <p id="recommendation">
+                    </p>
+
+                </div>
+
+                <div class="result-actions">
+
+    <a href="../report/report.html" class="report-btn">
+        🚨 Report This Scam
+    </a>
+
+    <button id="analyzeAgainBtn" class="again-btn">
+        🔄 Analyze Another Message
+    </button>
+
+</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SAFETY TIPS -->
+        <section class="quick-tips">
+
+            <h2>
+                Before You Act
+            </h2>
+
+            <div class="tips-grid">
+
+                <div class="tip">
+                    <span>🔗</span>
+                    <h3>Don't Click</h3>
+                    <p>
+                        Avoid clicking suspicious links.
+                    </p>
+                </div>
+
+
+                <div class="tip">
+                    <span>🔐</span>
+                    <h3>Protect OTP</h3>
+                    <p>
+                        Never share OTPs or passwords.
+                    </p>
+                </div>
+
+
+                <div class="tip">
+                    <span>💳</span>
+                    <h3>Verify Payments</h3>
+                    <p>
+                        Verify unexpected payment requests.
+                    </p>
+                </div>
+
+
+                <div class="tip">
+                    <span>📞</span>
+                    <h3>Verify Sender</h3>
+                    <p>
+                        Contact the organization directly.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="analyzer.js"></script>
+
+</body>
+
+</html>
