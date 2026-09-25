@@ -82,17 +82,12 @@ else {
 
         console.error(error);
 
-        resetForm.style.display = "none";
-
-        showError(
-            "Link Expired",
-            "This password reset link is invalid or has expired. Please request a new reset link."
-        );
+        accountEmail.textContent =
+            "Enter your new password below.";
 
     });
 
 }
-
 
 /* ================= RESET PASSWORD ================= */
 
