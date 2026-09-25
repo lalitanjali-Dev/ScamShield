@@ -60,8 +60,6 @@ if (
         "This password reset link is invalid or incomplete."
     );
 
-    resetForm.style.display = "none";
-
 }
 
 
