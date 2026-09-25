@@ -25,10 +25,16 @@ resetForm.addEventListener("submit", async function (event) {
 
     try {
 
-        await sendPasswordResetEmail(
-            auth,
-            email
-        );
+       const actionCodeSettings = {
+    url: "https://lalitanjali-dev.github.io/ScamShield/auth/reset-password.html",
+    handleCodeInApp: true
+};
+
+await sendPasswordResetEmail(
+    auth,
+    email,
+    actionCodeSettings
+);
 
 
         /* ================= SUCCESS MESSAGE ================= */
