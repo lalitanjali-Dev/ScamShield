@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ScamShield - Login</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="../index.html" class="logo">
+            🛡️ Scam<span>Shield</span>
+        </a>
+
+        <a href="../index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </header>
+
+
+    <!-- ================= LOGIN AREA ================= -->
+
+    <main class="login-container">
+
+        <section class="login-card">
+
+
+            <!-- ================= ICON ================= -->
+
+            <div class="login-icon">
+                🛡️
+            </div>
+
+
+            <!-- ================= HEADING ================= -->
+
+            <div class="login-heading">
+
+                <span class="small-title">
+                    WELCOME BACK
+                </span>
+
+                <h1>
+                    Login to <strong>ScamShield</strong>
+                </h1>
+
+                <p>
+                    Sign in to access your ScamShield account.
+                </p>
+
+            </div>
+
+
+            <!-- ================= LOGIN ERROR ================= -->
+
+            <div id="loginError" class="login-error hidden">
+
+                <span class="error-icon">
+                    ✕
+                </span>
+
+                <div>
+
+                    <strong>
+                        Account Not Found
+                    </strong>
+
+                    <p>
+                        No account exists with this email.
+                        Please create an account first.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= LOGIN FORM ================= -->
+
+            <form id="loginForm">
+
+
+                <!-- ================= EMAIL ================= -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ================= PASSWORD ================= -->
+
+                <div class="form-group">
+
+                    <div class="password-label">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <a href="forgot-password.html">
+    Forgot password?
+</a>
+
+                    </div>
+
+
+                    <!-- PASSWORD + ONE EYE ONLY -->
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                            autocomplete="current-password"
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                            aria-label="Show password"
+                        >
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= REMEMBER ME ================= -->
+
+                <div class="remember">
+
+                    <input
+                        type="checkbox"
+                        id="remember"
+                    >
+
+                    <label for="remember">
+                        Remember me
+                    </label>
+
+                </div>
+
+
+                <!-- ================= LOGIN BUTTON ================= -->
+
+                <button
+                    type="submit"
+                    class="login-submit"
+                >
+                    🔐 Login
+                </button>
+
+            </form>
+
+
+            <!-- ================= SIGNUP ================= -->
+
+            <div class="signup-text">
+
+                Don't have an account?
+
+                <a href="signup.html">
+                    Create Account
+                </a>
+
+            </div>
+
+
+            <!-- ================= SECURITY NOTICE ================= -->
+
+            <div class="security-note">
+
+                🛡️ Your security matters.
+                Never share your password or OTP with anyone.
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= LOGIN JS ================= -->
+
+    <script type="module" src="login.js"></script>
+
+</body>
+
+</html>

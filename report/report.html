@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ScamShield - Report a Scam</title>
+
+    <link rel="stylesheet" href="report.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="../index.html" class="logo">
+            🛡️ Scam<span>Shield</span>
+        </a>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../analyzer/analyzer.html">Analyzer</a>
+            <a href="../scams/scams.html">Scam Types</a>
+            <a href="report.html" class="active">Report Scam</a>
+        </nav>
+
+        <a href="../analyzer/analyzer.html" class="analyze-btn">
+            Analyze
+        </a>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="report-container">
+
+        <!-- HEADING -->
+        <section class="hero">
+
+            <span class="small-title">
+                REPORT A SCAM
+            </span>
+
+            <h1>
+                Help Make the Internet
+                <strong>Safer</strong>
+            </h1>
+
+            <p>
+                Received a suspicious message, call or payment request?
+                Report it so potential scams can be identified and
+                others can stay alert.
+            </p>
+
+        </section>
+
+
+        <!-- REPORT FORM -->
+        <section class="report-card">
+
+            <div class="card-heading">
+
+                <h2>
+                    Report Suspicious Activity
+                </h2>
+
+                <p>
+                    Provide as much information as you can.
+                </p>
+
+            </div>
+
+
+            <form id="reportForm">
+
+                <!-- SCAM TYPE -->
+                <div class="form-group">
+
+                    <label for="scamType">
+                        Scam Type
+                    </label>
+
+                    <select id="scamType" required>
+
+                        <option value="">
+                            Select scam type
+                        </option>
+
+                        <option value="Phishing">
+                            Phishing
+                        </option>
+
+                        <option value="Payment Scam">
+                            Payment Scam
+                        </option>
+
+                        <option value="Fake Job">
+                            Fake Job Scam
+                        </option>
+
+                        <option value="OTP Scam">
+                            OTP Scam
+                        </option>
+
+                        <option value="Prize Scam">
+                            Lottery / Prize Scam
+                        </option>
+
+                        <option value="KYC Scam">
+                            KYC Scam
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+                <div class="form-group">
+
+                    <label for="description">
+                        What happened?
+                    </label>
+
+                    <textarea
+                        id="description"
+                        placeholder="Describe the suspicious message, call, website or payment request..."
+                        required
+                    ></textarea>
+
+                    <small id="descriptionCount">
+                        0 characters
+                    </small>
+
+                </div>
+
+
+                <!-- SOURCE -->
+                <div class="form-group">
+
+                    <label for="source">
+                        Where did you receive it?
+                    </label>
+
+                    <select id="source" required>
+
+                        <option value="">
+                            Select source
+                        </option>
+
+                        <option value="SMS">
+                            SMS
+                        </option>
+
+                        <option value="WhatsApp">
+                            WhatsApp
+                        </option>
+
+                        <option value="Email">
+                            Email
+                        </option>
+
+                        <option value="Phone Call">
+                            Phone Call
+                        </option>
+
+                        <option value="Website">
+                            Website
+                        </option>
+
+                        <option value="Social Media">
+                            Social Media
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CONTACT -->
+                <div class="form-group">
+
+                    <label for="contact">
+                        Suspicious phone number / email / link
+                        <span>(Optional)</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contact"
+                        placeholder="Example: +91 XXXXX XXXXX or suspicious website"
+                    >
+
+                </div>
+
+
+                <!-- CHECKBOX -->
+                <div class="checkbox-group">
+
+                    <input
+                        type="checkbox"
+                        id="confirm"
+                        required
+                    >
+
+                    <label for="confirm">
+                        I confirm that the information provided is
+                        accurate to the best of my knowledge.
+                    </label>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    🚨 Submit Scam Report
+                </button>
+
+            </form>
+
+
+            <!-- SUCCESS MESSAGE -->
+            <div
+                id="successMessage"
+                class="success-message hidden"
+            >
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h2>
+                    Report Submitted
+                </h2>
+
+                <p>
+                    Thank you for helping make ScamShield safer.
+                    Your report has been recorded locally for this
+                    prototype.
+                </p>
+
+                <button
+                    id="newReportBtn"
+                    class="new-report-btn"
+                >
+                    Submit Another Report
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SAFETY NOTICE -->
+        <section class="notice">
+
+            <h3>
+                🛡️ Important Safety Notice
+            </h3>
+
+            <p>
+                ScamShield will never ask you to share your password,
+                OTP, PIN or banking credentials. Do not include
+                sensitive passwords or private financial information
+                in your report.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="report.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+/* HISTORY PAGE */
+
+.history-page {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
+    color: white;
+}
+
+.history-page > h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.history-page > p {
+    text-align: center;
+    color: #9fb3c8;
+    margin-bottom: 40px;
+}
+
+.history-card {
+    background: #0d1b2a;
+    border: 1px solid #1e3a52;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 18px;
+    transition: 0.3s ease;
+}
+
+.history-card:hover {
+    border-color: #28d7ff;
+    transform: translateY(-3px);
+}
+
+.history-card h3 {
+    color: #28d7ff;
+    margin: 0 0 12px;
+    text-transform: capitalize;
+}
+
+.history-card p {
+    color: #b7c7d8;
+    margin: 8px 0;
+}
+
+.history-card strong {
+    color: white;
+}
+
+.history-risk {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #351515;
+    color: #ff6b6b;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.empty-history {
+    text-align: center;
+    background: #0d1b2a;
+    border: 1px solid #1e3a52;
+    border-radius: 14px;
+    padding: 50px 20px;
+}
+
+.empty-history h2 {
+    color: white;
+}
+
+.empty-history p {
+    color: #9fb3c8;
+}
+
+.clear-history-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #28d7ff;
+    color: #06111f;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.clear-history-btn:hover {
+    background: #16bde7;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .history-page {
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .history-page > h1 {
+        font-size: 30px;
+    }
+
+    .history-card {
+        padding: 20px;
+    }
+}
+/* =========================================
+   HISTORY PAGE NAVBAR
+========================================= */
+
+nav {
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    background: #07111f;
+    border-bottom: 1px solid #1e3a52;
+    box-sizing: border-box;
+}
+
+nav a {
+    color: #b7c7d8;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #28d7ff;
+}
+
+nav a.active {
+    color: #28d7ff;
+}
+
+/* Keep page below navbar */
+
+.history-page {
+    min-height: calc(100vh - 70px);
+    margin: 0 auto;
+    padding: 60px 25px;
+    box-sizing: border-box;
+}

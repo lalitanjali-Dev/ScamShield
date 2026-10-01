@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScamShield - Analysis History</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="analyzer.css">
+    <link rel="stylesheet" href="history.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="analyzer.html">Analyzer</a>
+        <a href="../scams/scams.html">Scam Types</a>
+        <a href="history.html" class="active">History</a>
+    </nav>
+
+    <section class="history-page">
+
+        <h1>Analysis History</h1>
+
+        <p>
+            View your previous scam analysis results.
+        </p>
+
+        <div id="historyContainer"></div>
+
+        <button onclick="clearHistory()" class="clear-history-btn">
+            Clear History
+        </button>
+
+    </section>
+
+    <script>
+
+        const container = document.getElementById("historyContainer");
+
+        let history =
+            JSON.parse(localStorage.getItem("analysisHistory")) || [];
+
+        if (history.length === 0) {
+
+            container.innerHTML = `
+                <div class="empty-history">
+                    <h2>No Analysis History</h2>
+                    <p>Analyze a message, email, image or URL first.</p>
+                </div>
+            `;
+
+        } else {
+
+            history.reverse().forEach(item => {
+
+                container.innerHTML += `
+                    <div class="history-card">
+
+                        <h3>${item.type || "Message"} Analysis</h3>
+
+                        <span class="history-risk">
+                            ${item.level || "Unknown"}
+                        </span>
+
+                        <p>
+                            Risk Score:
+                            <strong>${item.score || 0}%</strong>
+                        </p>
+
+                        <p>
+                            Analyzed:
+                            ${item.analyzedAt || "Unknown"}
+                        </p>
+
+                    </div>
+                `;
+
+            });
+
+        }
+
+        function clearHistory() {
+
+            localStorage.removeItem("analysisHistory");
+
+            location.reload();
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ScamShield - Scam Analyzer</title>
+
+    <link rel="stylesheet" href="analyzer.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="shield">🛡️</span>
+            Scam<span>Shield</span>
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="analyzer.html" class="active">Analyzer</a>
+            <a href="../scams/scams.html">Scam Types</a>
+            <a href="history.html">📊 History</a>
+            <a href="../index.html#about">About</a>
+        </nav>
+
+        <a href="../auth/login.html" class="login-btn">
+            Login
+        </a>
+
+    </header>
+
+
+    <!-- MAIN ANALYZER -->
+    <main class="analyzer-container">
+
+        <!-- HEADING -->
+        <section class="heading">
+
+            <span class="small-title">
+                SCAM ANALYZER
+            </span>
+
+            <h1>
+                Check Before
+                <strong>You Trust</strong>
+            </h1>
+
+            <p>
+                Check suspicious messages, emails, screenshots and URLs.
+                ScamShield will analyze them and identify possible scam indicators.
+            </p>
+
+        </section>
+
+
+        <!-- ANALYZER CARD -->
+        <section class="analyzer-card">
+
+            <!-- ANALYZER OPTIONS -->
+            <div class="analyzer-options">
+
+                <button class="type-btn active" data-type="message">
+                    💬 Message
+                </button>
+
+                <button class="type-btn" data-type="email">
+                    📧 Email
+                </button>
+
+                <button class="type-btn" data-type="image">
+                    🖼️ Image / Screenshot
+                </button>
+
+                <button class="type-btn" data-type="url">
+                    🔗 URL
+                </button>
+
+            </div>
+
+
+            <!-- MESSAGE INPUT -->
+            <div id="messageAnalyzer" class="input-type">
+
+                <div class="input-header">
+
+                    <label for="message">
+                        Suspicious Message
+                    </label>
+
+                    <span id="characterCount">
+                        0 characters
+                    </span>
+
+                </div>
+
+                <textarea
+                    id="message"
+                    placeholder="Example: Congratulations! You have won ₹50,000. Click this link to claim your prize now..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- EMAIL INPUT -->
+            <div id="emailAnalyzer" class="input-type hidden">
+
+                <label for="senderEmail">
+                    Sender Email
+                </label>
+
+                <input
+                    type="email"
+                    id="senderEmail"
+                    placeholder="Example: support@example.com"
+                >
+
+                <label for="emailSubject">
+                    Email Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="emailSubject"
+                    placeholder="Example: Your account will be blocked"
+                >
+
+                <label for="emailBody">
+                    Email Content
+                </label>
+
+                <textarea
+                    id="emailBody"
+                    placeholder="Paste the suspicious email content here..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- IMAGE INPUT -->
+            <div id="imageAnalyzer" class="input-type hidden">
+
+                <label for="imageInput">
+                    Upload Screenshot or Image
+                </label>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                >
+
+                <div id="imagePreview" class="image-preview">
+                    <p>
+                        Upload a screenshot containing the suspicious message.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- URL INPUT -->
+            <div id="urlAnalyzer" class="input-type hidden">
+
+                <label for="urlInput">
+                    Suspicious URL
+                </label>
+
+                <input
+                    type="url"
+                    id="urlInput"
+                    placeholder="Example: https://example.com/claim-prize"
+                >
+
+                <p class="input-help">
+                    Paste the complete URL you want ScamShield to check.
+                </p>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+            <div class="button-row">
+
+                <button id="analyzeBtn" class="analyze-btn">
+                    🔍 Analyze
+                </button>
+
+                <button id="clearBtn" class="clear-btn">
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- RESULT -->
+            <div id="result" class="result hidden">
+
+                <div class="result-header">
+
+                    <div>
+
+                        <span class="result-label">
+                            RISK LEVEL
+                        </span>
+
+                        <h2 id="riskLevel">
+                            HIGH RISK
+                        </h2>
+
+                    </div>
+
+
+                    <div class="score-box">
+
+                        <span id="riskScore">
+                            0
+                        </span>
+
+                        <small>%</small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROGRESS BAR -->
+                <div class="progress">
+
+                    <div id="progressBar"></div>
+
+                </div>
+
+
+                <!-- REASONS -->
+                <div class="result-section">
+
+                    <h3>
+                        ⚠️ Why is this suspicious?
+                    </h3>
+
+                    <ul id="reasons">
+                    </ul>
+
+                </div>
+
+
+                <!-- SAFETY -->
+                <div class="result-section safety">
+
+                    <h3>
+                        🛡️ Safety Recommendation
+                    </h3>
+
+                    <p id="recommendation">
+                    </p>
+
+                </div>
+
+
+                <!-- RESULT ACTIONS -->
+                <div class="result-actions">
+
+                    <a href="../report/report.html" class="report-btn">
+                        🚨 Report This Scam
+                    </a>
+
+                    <button id="analyzeAgainBtn" class="again-btn">
+                        🔄 Analyze Another
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SAFETY TIPS -->
+        <section class="quick-tips">
+
+            <h2>
+                Before You Act
+            </h2>
+
+            <div class="tips-grid">
+
+                <div class="tip">
+                    <span>🔗</span>
+                    <h3>Don't Click</h3>
+                    <p>
+                        Avoid clicking suspicious links.
+                    </p>
+                </div>
+
+
+                <div class="tip">
+                    <span>🔐</span>
+                    <h3>Protect OTP</h3>
+                    <p>
+                        Never share OTPs or passwords.
+                    </p>
+                </div>
+
+
+                <div class="tip">
+                    <span>💳</span>
+                    <h3>Verify Payments</h3>
+                    <p>
+                        Verify unexpected payment requests.
+                    </p>
+                </div>
+
+
+                <div class="tip">
+                    <span>📞</span>
+                    <h3>Verify Sender</h3>
+                    <p>
+                        Contact the organization directly.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="analyzer.js"></script>
+
+</body>
+
+</html>
